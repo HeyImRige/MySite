@@ -1,3 +1,7 @@
+/*
+Current color scheme
+http://paletton.com/#uid=5400u0ko8ZDce+5iHZStFYyIhV8
+*/
 html {
      overflow: -moz-scrollbars-vertical;
      overflow: scroll;
@@ -64,10 +68,10 @@ body header .mainTitle{
     width: inherit;
 }
 article.project:nth-of-type(odd) {
-    background:#607D8B;
+    background:#9997F7;
 }
 article.project:nth-of-type(even) {
-    background: #90A4AE;
+    background: #BD8FF6;
 }
 
 
