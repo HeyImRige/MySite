@@ -1,0 +1,196 @@
+html {
+     overflow: -moz-scrollbars-vertical;
+     overflow: scroll;
+}
+.navbar { 
+    margin-bottom: 0px;
+    font-size: 26px;
+}
+.navbar-collapse.in{
+    overflow-y: hidden;
+    overflow-x:hidden;
+}
+.navbar-brand{
+    font-size: 30;
+}
+.glyphicon{
+    font-size: 16px;
+}
+.navList{
+    text-align: right;
+    text-transform: uppercase;
+}
+body header.myHeader{
+    border-radius: 4px;
+    margin-bottom: 0px;
+    padding: 0px;
+    height: 60%;
+}
+body header .mainTitle{
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+.titleItem{
+    font-size: 60px;
+    font-size:14vmin;
+    padding-bottom: 10px;
+    transition: all linear .4s;
+    transition-timing-function: cubic-bezier(.6,.01,.79,.96);
+}
+.titleItem.ng-hide {
+     opacity: 0;
+}
+.titleItem.ng-move,
+.project.ng-enter {
+      opacity: 0;
+}
+.empytSelection{
+    font-size: 30px;
+    font-size:7vmin;
+}
+
+
+.superBig{
+    height: 200%;
+}
+.container{
+    width: inherit;
+}
+article.project:nth-of-type(odd) {
+    background:#607D8B;
+}
+article.project:nth-of-type(even) {
+    background: #90A4AE;
+}
+
+
+
+.project{
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    border-color: #031525;
+    box-shadow: 0px 2px 2px #aaaaaa;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border:6px solid inherit;
+}
+/*enter - when a new item is added to the list or when an item is revealed after a filter
+leave - when an item is removed from the list or when an item is filtered out
+move - when an adjacent item is filtered out causing a reorder or when the item contents are reordered*/
+.project.ng-move,
+.project.ng-enter,
+.project.ng-leave {
+  transition:all ease-in .4s;
+}
+.project.ng-move,
+.project.ng-enter {
+      opacity: 0;
+}
+
+.project.ng-move.ng-move-active,
+.project.ng-enter.ng-enter-active{
+      opacity: 1;
+}
+
+.project.ng-leave.ng-leave-active:nth-of-type(odd)
+{
+    transform: translate(-100%,0px);/*end leave*/
+}
+.project.ng-leave.ng-leave-active:nth-of-type(even)
+{
+    transform: translate(100%,0px);/*end leave*/
+}
+
+.project.ng-leave{
+    transform: translate(0px,0px);
+}
+
+.in-remove-active{
+    overflow: hidden;
+}
+.project-Title{
+    margin: 0;
+    float: left;
+    font-size: 18pt; 
+}
+.project-Date{
+    margin: 0px;
+    clear: both;
+    float: left;
+    font-size:14pt;
+}
+
+.project-container{
+    width: 100%;
+    min-height: 92%;
+    overflow-x: hidden;
+}
+.article-Title{
+    min-width: 340px;
+    padding: 5px;
+}
+.project-content{
+    clear:both;
+    font-size: 13pt;
+}
+.myVideo{
+    overflow: hidden;
+    border-radius: inherit;
+}
+.typeContainer{
+    box-shadow: 0px 3px 2px #aaaaaa;
+    padding-left: 8px;
+    display: flex;
+    align-content: left;
+    height: 48px;
+    width: inherit;
+    background-color: #0099ff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+.typeButton{
+    display: flex;
+    height: inherit;
+    padding-left: 14px;
+    padding-right: 14px;
+    color: white;
+    text-transform: uppercase;
+    opacity: .9;
+    transition: .2s;
+    font-size: 1.6vmax;
+    align-items: center;
+    height: 48px;
+    border-bottom: 2px solid;
+    border-color: transparent;
+}
+.current{
+    opacity: 1;
+    border-color: white;
+}
+
+.mainConent{
+    background-color: white;
+    padding: 2px;
+    max-width: 1010px;
+    margin: 0 auto;
+}
+
+.videoContainer{
+    border:1px solid inherit;
+    padding:0;
+    overflow:hidden;
+    border-radius:inherit;
+    z-index:2;
+}
+.background{
+    background-color: #444444;
+}

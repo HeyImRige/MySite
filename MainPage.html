@@ -1,0 +1,221 @@
+<!<!DOCTYPE html>
+
+<html lang="en" ng-app="angularApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Aron - Software and Audio Engineer</title>
+    <!--jqery min-->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!--angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!--angular animate-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+    <!--bootstrap-->
+    <script src="ui-bootstrap-tpls-2.1.3.min.js" type="text/javascript"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--my css-->
+    <link rel="stylesheet" type="text/css" href="myCSS.css">
+
+
+    <script>
+        
+
+    // create our angular app and inject ui.bootstrap
+    var angularApp = angular.module('angularApp', ['ui.bootstrap','ngAnimate']);
+
+    angularApp.controller('mainController',['$scope','$sce','$window', function($scope,$sce,$window) {
+        $scope.test;
+        $scope.isCollapsed;
+        $scope.software=true;
+        $scope.audio=true;
+        $scope.softwareBtn=true;
+        $scope.audioBtn=true;
+        $scope.animationBool=true;
+        $scope.projects = [
+            {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":'https://www.youtube.com/embed/YlB-5zKCQac',"content":"hello this is some information about that audio thing"},
+            {"type":"software","date":"1420113600","title":"WOW SOFTWARE PROJECT","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"hello this is some information about that software thing"},
+            {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":"https://puu.sh/rkrCp/15785ff804.png","content":"hello this is some information about that audio thing"},
+            {"type":"software","date":"1420113600","title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"},
+            {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":"youtube.com","content":"hello this is some information about that audio thing"},
+            {"type":"software","date":"1420113600","title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"}
+        ];
+        $scope.myAnimationButton = function(changeType) {
+            console.log("in button");
+            $scope.animationBool =!$scope.animationBool;
+            setTimeout(function(){
+                if(changeType.localeCompare('software')==0){
+                    $scope.software=true;
+                    $scope.audio=false;
+                    $('#software').addClass('current');
+                    $('#audio').removeClass('current');
+                    $('#both').removeClass('current');
+                }
+                if(changeType.localeCompare('audio')==0){
+                    $scope.software=false;
+                    $scope.audio=true;
+                    $('#software').removeClass('current');
+                    $('#audio').addClass('current');
+                    $('#both').removeClass('current');
+                }
+                if(changeType.localeCompare('both')==0){
+                    $scope.software=true;
+                    $scope.audio=true;
+                    $('#software').removeClass('current');
+                    $('#audio').removeClass('current');
+                    $('#both').addClass('current');
+                }
+                $scope.animationBool =!$scope.animationBool;
+                $scope.$apply();
+                }, 500);
+        };
+        $scope.to_trusted = function(html_code) { return $sce.trustAsResourceUrl(html_code); };
+        $scope.customFilter = function(item){
+             if(item.type.localeCompare("software")==0&&$scope.software){
+                 return true;
+             }
+             if(item.type.localeCompare("audio")==0&&$scope.audio){
+                 return true;
+             }
+        };
+    }]);
+    angularApp.directive('resize', function ($window) {
+        return function (scope, element) {
+            var w = angular.element($window);
+            scope.getWindowDimensions = function () {
+                return {
+                    'h': w.height(),
+                    'w': w.width()
+                };
+            };
+            scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
+                scope.windowHeight = newValue.h;
+                scope.windowWidth = newValue.w;
+                scope.outside = newValue.w;
+                scope.flexType = function(){
+                    if(newValue.w>865){
+                        return {
+                            'flex-direction': 'row',
+                            'align-items': 'stretch'
+
+                        };
+                    }
+                    else{
+                        return{
+                            'flex-direction':'column',
+                            'align-items': 'center'
+                        };
+                    }
+                }
+                scope.style = function () {
+                    if(newValue.w>1000){
+                        return {
+                            'width': '590px'
+                        };
+                    }
+                    else{
+                        return {
+                            'width': Math.floor(newValue.w*(.9)) + 'px'
+                        };
+                    }
+                };
+                scope.videostyle = function () {
+                    if(newValue.w>1000){
+                        return {
+                            'height': '225px',
+                            'width': '400px'
+                        };
+                    }
+                    else{
+                        return {
+                            'height': Math.floor(newValue.w*(9/16)) + 'px',
+                            'width': Math.floor(newValue.w) + 'px'
+                        };
+                    }
+                };
+            }, true);
+
+            w.bind('resize', function () {
+                scope.$apply();
+            });
+        }
+    })
+    </script>
+</head>
+
+<body ng-controller = "mainController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button id="navToggle" type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed; blur(this)">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand" href="#">Robert Aron</a>
+            </div>
+            <div class="collapse navbar-collapse" ng-init="isCollapsed=true" uib-collapse="isCollapsed">
+                <ul class="nav navbar-nav navbar-right" >
+                    <li class="navList"><a href="#">Home</a></li>
+                    <li class="navList"><a href="#">About</a></li>
+                    <li class="navList"><a href="#"><span class="glyphicon glyphicon-envelope"></span>Contact Me</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="background">
+            
+
+        <div class="mainConent">
+            <header class="jumbotron myHeader">
+                <h1 class="mainTitle">
+                    <!--clean this up with something else-->
+                    <div class="titleItem" ng-show="animationBool&&software&&!audio" >
+                        Software
+                    </div>
+                    <div class="titleItem" ng-show="animationBool&&audio&&software" >
+                        Software<br>&<br>Audio
+                    </div>
+                    <div class="titleItem" ng-show="animationBool&&audio&&!software" >
+                        Audio
+                    </div>
+                    <div class="titleItem empytSelection" ng-show="animationBool&&!audio&&!software">
+                        Nothing to see here!<br>
+                        Select atleast one of the options.
+                    </div>
+                </h1>
+            </header>
+            <div class="typeContainer">
+                <label id="software" class="typeButton" ng-click="myAnimationButton('software')">Software</label>
+                <label id="audio" class="typeButton" ng-click="myAnimationButton('audio')">Audio</label>
+                <label id="both" class="typeButton current" ng-click="myAnimationButton('both')">Both</label>
+            </div>
+                
+
+
+
+            <!--articles-->
+            <div class="project-container" resize>
+                <article  ng-repeat="project in projects | filter:customFilter" class="project" ng-if="animationBool" ng-style="flexType()">
+                    <div class="videoContainer">
+                        <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
+                    </div>
+                    <div ng-style="style()" class="article-Title">
+                        <h2 class="project-Title">{{project.title}}</h2><br>
+                        <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
+                        <div class="project-content">
+                            {{project.content}}
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+
+        <div>
+    </div>
+</body>
+
+</html>
