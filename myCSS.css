@@ -197,17 +197,25 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     z-index:3;
 }
 .background{
-  background-image: url('SC___FB.png');
-  margin: auto;
-  background-size: cover;
-  display: block;
-  filter: blur(10px);
-  -webkit-filter: blur(10px);
-  width: 100%;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: 0;
+    background-image: url('SC___FB.png');
+    margin: auto;
+    background-size: cover;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    width: 101%;
+    height: 101%;
+    left: -1px;
+    position: fixed;
+    right: 0;
+    z-index: -1p;
 
+}
+.blackBackground{
+    margin: auto;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }

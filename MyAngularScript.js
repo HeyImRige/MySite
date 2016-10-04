@@ -16,6 +16,8 @@ angularApp.controller('mainController',['$scope','$sce','$window', function($sco
         
         {"type":"audio","date":1462597200000 ,"title":"[Future Bass] Candy","media":"https://www.youtube.com/embed/xNQH2ZLkUi4","content":"'Candy!' is a future bass track produced in fl studio. Following the general trend of future bass tracks, it contains bits of short synths and samples that give the track a cute tone and sound."},
         {"type":"audio","date":1474174800000,"title":"[Drumstep] Overwatch Victory Remix","media":"https://www.youtube.com/embed/LAGoi9QgShk","content":"Overwatch remix yeah yeah yeah"},
+        {"type":"audio","date":1473051600000,"title":"[Epic Movie Trailer] An Adversary","media":"https://www.youtube.com/embed/gVGhPOorDr4","content":"Track in the styel movie trailer yeah yeah"},
+         {"type":"audio","date":1471669200000,"title":"[Progressive House] Burning","media":"https://www.youtube.com/embed/SMBXaJPF9sM","content":"Progressive house track yeah yeah promoted and featured by Phantom Stone Records"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"hello this is some information about that software thing"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"}
