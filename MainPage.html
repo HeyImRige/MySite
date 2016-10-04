@@ -84,7 +84,7 @@
                         <h2 class="project-Title">{{project.title}}</h2>
                         <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
                         <div class="project-content">
-                            {{project.content}}
+                            {{windowWidth>800 || windowWidth<700 ? project.content:project.contentSmall}}
                         </div>
                         <a ng-class="project.additionalText === undefined  ? '' : 'aditionalLink btn btn-info'" href="{{project.additionalLink}}" role="button">
                             {{project.additionalText}} 
