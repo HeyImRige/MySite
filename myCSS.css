@@ -78,7 +78,7 @@ article.project:nth-of-type(even) {
 
 .project{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border-radius: 6px;
     border-color: #031525;
     box-shadow: 0px 2px 2px #aaaaaa;
@@ -191,7 +191,6 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 }
 
 .videoContainer{
-    border:1px solid inherit;
     padding:0;
     overflow:hidden;
     border-radius:inherit;
@@ -199,6 +198,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 }
 .background{
   background-image: url('SC___FB.png');
+  margin: auto;
   background-size: cover;
   display: block;
   filter: blur(10px);

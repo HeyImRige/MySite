@@ -11,12 +11,13 @@ angularApp.controller('mainController',['$scope','$sce','$window', function($sco
     $scope.softwareBtn=true;
     $scope.audioBtn=true;
     $scope.animationBool=true;
+    /*TODO: move this data into a json file */ 
     $scope.projects = [
-        {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":'https://www.youtube.com/embed/YlB-5zKCQac',"content":"hello this is some information about that audio thing"},
-        {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"hello this is some information about that software thing"},
+        
+        {"type":"audio","date":1293883200,"title":"[Future Bass] Candy","media":"https://www.youtube.com/embed/xNQH2ZLkUi4","content":"'Candy!' is a future bass track produced in fl studio. Following the general trend of future bass tracks, it contains bits of short synths and samples that give the track a cute tone and sound."},
         {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":"https://www.youtube.com/embed/LAGoi9QgShk","content":"hello this is some information about that audio thing"},
+        {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"hello this is some information about that software thing"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"},
-        {"type":"audio","date":1293883200,"title":"WOW AUDIO PROJECT","media":"https://www.youtube.com/embed/xNQH2ZLkUi4","content":"hello this is some information about that audio thing"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"}
     ];
     $scope.myAnimationButton = function(changeType) {
@@ -72,7 +73,7 @@ angularApp.directive('resize', function ($window) {
             scope.windowWidth = newValue.w;
             scope.outside = newValue.w;
             scope.flexType = function(){
-                if(newValue.w>865){
+                if(newValue.w>700){
                     return {
                         'flex-direction': 'row',
                         'align-items': 'stretch'
@@ -91,6 +92,10 @@ angularApp.directive('resize', function ($window) {
                     return {
                         'width': '590px'
                     };
+                }else if(newValue.w>700){
+                    return {
+                        'width':  Math.floor(newValue.w*(0.6)) + 'px'
+                    };
                 }
                 else{
                     return {
@@ -103,6 +108,13 @@ angularApp.directive('resize', function ($window) {
                     return {
                         'height': '225px',
                         'width': '400px'
+                    };
+                }
+                else if(newValue.w>700){
+                    console.log( Math.floor(newValue.w*(0.225)) + 'px '+Math.floor(newValue.w*(0.4)) + 'px');
+                    return { 
+                        'height': Math.floor(newValue.w*(0.225)) + 'px',
+                        'width': Math.floor(newValue.w*(0.4)) + 'px'
                     };
                 }
                 else{

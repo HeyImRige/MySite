@@ -77,7 +77,7 @@
             <!--articles-->
             <div class="project-container" resize>
                 <article  ng-repeat="project in projects | filter:customFilter | orderBy:'date'" class="project" ng-if="animationBool" ng-style="flexType()">
-                    <div class="videoContainer">
+                    <div ng-style="videostyle()" class="videoContainer">
                         <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
                     </div>
                     <div ng-style="style()" class="article-Title">
