@@ -18,7 +18,7 @@ angularApp.controller('mainController',['$scope','$sce','$window', function($sco
         {"type":"audio","date":1474174800000,"title":"[Drumstep] Overwatch Victory Remix","media":"https://www.youtube.com/embed/LAGoi9QgShk","content":"Overwatch remix yeah yeah yeah"},
         {"type":"audio","date":1473051600000,"title":"[Epic Movie Trailer] An Adversary","media":"https://www.youtube.com/embed/gVGhPOorDr4","content":"Track in the styel movie trailer yeah yeah"},
          {"type":"audio","date":1471669200000,"title":"[Progressive House] Burning","media":"https://www.youtube.com/embed/SMBXaJPF9sM","content":"Progressive house track yeah yeah promoted and featured by Phantom Stone Records"},
-        {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"hello this is some information about that software thing"},
+        {"type":"software","date":1420113600,"title":"Never Late Smart Alarm","media":"https://puu.sh/rkrA7/c8d7a3517e.png","content":"Never late smart alarm is an android appliacation. Type in a location and time you need to be there, and it'll notify you when you need to leave. Google traffic data is called in real time, so you wont be surprised by wrecks on your commute to work.","additionalLink":"http://devpost.com/software/neverlate-smartalarm-1vyjbi?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team","additionalText":"Read more on Devpost"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"},
         {"type":"software","date":1420113600,"title":"WOW SOFTWARE PROJECT","media":"imgur.com","content":"hello this is some information about that software thing"}
     ];
@@ -51,7 +51,8 @@ angularApp.controller('mainController',['$scope','$sce','$window', function($sco
             $scope.$apply();
             }, 500);
     };
-    $scope.to_trusted = function(html_code) { return $sce.trustAsResourceUrl(html_code); };
+    $scope.to_trusted = function(html_code) {
+        return $sce.trustAsResourceUrl(html_code); };
     $scope.customFilter = function(item){
             if(item.type.localeCompare("software")==0&&$scope.software){
                 return true;
@@ -71,11 +72,9 @@ angularApp.directive('resize', function ($window) {
             };
         };
         scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
-            scope.windowHeight = newValue.h;
             scope.windowWidth = newValue.w;
-            scope.outside = newValue.w;
             scope.flexType = function(){
-                if(newValue.w>700){
+                if(scope.windowWidth>700){
                     return {
                         'flex-direction': 'row',
                         'align-items': 'stretch'
@@ -90,39 +89,38 @@ angularApp.directive('resize', function ($window) {
                 }
             }
             scope.style = function () {
-                if(newValue.w>1000){
+                if(scope.windowWidth>1000){
                     return {
                         'width': '590px'
                     };
-                }else if(newValue.w>700){
+                }else if(scope.windowWidth>700){
                     return {
-                        'width':  Math.floor(newValue.w*(0.6)) + 'px'
+                        'width':  Math.floor(scope.windowWidth*(0.6)) + 'px'
                     };
                 }
                 else{
                     return {
-                        'width': Math.floor(newValue.w*(.9)) + 'px'
+                        'width': Math.floor(scope.windowWidth*(.9)) + 'px'
                     };
                 }
             };
             scope.videostyle = function () {
-                if(newValue.w>1000){
+                if(scope.windowWidth>1000){
                     return {
                         'height': '225px',
                         'width': '400px'
                     };
                 }
-                else if(newValue.w>700){
-                    console.log( Math.floor(newValue.w*(0.225)) + 'px '+Math.floor(newValue.w*(0.4)) + 'px');
+                else if(scope.windowWidth>700){
                     return { 
-                        'height': Math.floor(newValue.w*(0.225)) + 'px',
-                        'width': Math.floor(newValue.w*(0.4)) + 'px'
+                        'height': Math.floor(scope.windowWidth*(0.225)) + 'px',
+                        'width': Math.floor(scope.windowWidth*(0.4)) + 'px'
                     };
                 }
                 else{
                     return {
-                        'height': Math.floor(newValue.w*(9/16)) + 'px',
-                        'width': Math.floor(newValue.w) + 'px'
+                        'height': Math.floor(scope.windowWidth*(9/16)) + 'px',
+                        'width': Math.floor(scope.windowWidth) + 'px'
                     };
                 }
             };

@@ -80,14 +80,17 @@
                     <div ng-style="videostyle()" class="videoContainer">
                         <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
                     </div>
-                    <div ng-style="style()" class="article-Title">
-                        <h2 class="project-Title">{{project.title}}</h2><br>
+                    <div ng-style="style()" class="article-Content">
+                        <h2 class="project-Title">{{project.title}}</h2>
                         <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
                         <div class="project-content">
                             {{project.content}}
                         </div>
+                        <a ng-class="project.additionalText === undefined  ? '' : 'aditionalLink btn btn-info'" href="{{project.additionalLink}}" role="button">
+                            {{project.additionalText}} 
+                            <span ng-class="project.additionalText === undefined  ? '' : 'glyphicon glyphicon-chevron-right'"></span>
+                        </a>
                     </div>
-
                 </article>
             </div>
         <div>
