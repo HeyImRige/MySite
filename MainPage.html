@@ -77,14 +77,17 @@
             <!--articles-->
             <div class="project-container" resize>
                 <article  ng-repeat="project in projects | filter:customFilter | orderBy:'-date'" class="project" ng-if="animationBool" ng-style="flexType()">
-                    <div ng-style="videostyle()" class="videoContainer">
+                    <div ng-show="project.media.indexOf('youtube')==-1" ng-style="videostyle()" class="videoContainer">
+                        <img  ng-src="{{project.media}}" ng-style="videostyle()">
+                    </div>
+                    <div ng-show="project.media.indexOf('youtube')!=-1" ng-style="videostyle()" class="videoContainer">
                         <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
                     </div>
                     <div ng-style="style()" class="article-Content">
                         <h2 class="project-Title">{{project.title}}</h2>
                         <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
                         <div class="project-content">
-                            {{windowWidth>900 || windowWidth<700 ? project.content:project.contentSmall}}
+                            {{windowWidth>900 || windowWidth<700 ? project.content: project.contentSmall}}
                         </div>
                         <a ng-class="project.additionalText === undefined  ? '' : 'aditionalLink btn btn-info'" href="{{project.additionalLink}}" role="button">
                             {{project.additionalText}} 
