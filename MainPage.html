@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="myCSS.css">
 
 
-    <script src="MyAngularScript.js"></script>
+    <script src="MyAngularMain.js"></script>
 </head>
 
 <body ng-controller = "mainController">
@@ -32,12 +32,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> 
                 </button>
-                <a class="navbar-brand" href="#">Robert Aron</a>
+                <a class="navbar-brand" href="MainPage.html">Robert Aron</a>
             </div>
             <div class="collapse navbar-collapse" ng-init="isCollapsed=true" uib-collapse="isCollapsed">
                 <ul class="nav navbar-nav navbar-right" >
-                    <li class="navList"><a href="#">Home</a></li>
-                    <li class="navList"><a href="#">About</a></li>
+                    <li class="navList"><a href="MainPage.html">Home</a></li>
+                    <li class="navList"><a href="AboutPage.html">About</a></li>
                     <li class="navList"><a href="#"><span class="glyphicon glyphicon-envelope"></span>Contact Me</a></li>
                 </ul>
             </div>
@@ -46,10 +46,9 @@
         <div class="blackBackground">
             <div class="background"></div>
         </div>     
-        <div class="mainConent">
+        <div class="mainContent">
             <header class="jumbotron myHeader">
                 <h1 class="mainTitle">
-                    <!--clean this up with something else-->
                     <div class="titleItem" ng-show="animationBool&&software&&!audio" >
                         Software
                     </div>

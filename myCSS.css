@@ -28,8 +28,10 @@ body header.myHeader{
     border-radius: 4px;
     margin-bottom: 0px;
     padding: 0px;
-    box-shadow: 0px 3px 2px #aaaaaa;
     height: 60%;
+}
+body div .aboutMe{
+    border-radius: 4px;
 }
 body header .mainTitle{
     text-transform: uppercase;
@@ -40,6 +42,11 @@ body header .mainTitle{
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: black;
+}
+body div .aboutTitle{
+    margin: 20px;
+    text-transform: uppercase;
     color: black;
 }
 .titleItem{
@@ -184,13 +191,36 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     border-color: white;
 }
 
-.mainConent{
+.mainContent{
     position: relative;
     background-color: white;
     padding: 2px;
     max-width: 1010px;
     margin: 0 auto;
     z-index: 2;
+}
+.aboutContainer{
+    max-width: 1010px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.contactContainer{
+    max-width: 1010px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.aboutContent{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-direction: row-reverse;
+
+}
+.myPhoto{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
 }
 
 .videoContainer{
@@ -211,7 +241,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     left: -1px;
     position: fixed;
     right: 0;
-    z-index: -1p;
+    z-index: -1;
 
 }
 .blackBackground{
@@ -229,4 +259,31 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     justify-content: flex-end;
     margin-top: auto;
     max-width: 250px;
+}
+
+.emailForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.contactMe{
+    padding: 30px;
+    padding-top: 48px;
+    border-radius: 4px;
+}
+
+
+.emailField{
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+.emailBody{
+    margin-top: 10px;
+}
+
+
+.sendMailBtn{
+    margin-top: 10px;
+    width: 100px;
 }
