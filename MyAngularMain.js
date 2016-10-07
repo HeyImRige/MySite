@@ -1,6 +1,3 @@
-    
-
-// create our angular app and inject ui.bootstrap
 var angularApp = angular.module('angularApp', ['ui.bootstrap','ngAnimate']);
 
 angularApp.controller('mainController',['$scope','$sce','$window', function($scope,$sce,$window) {
