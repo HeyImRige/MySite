@@ -212,10 +212,10 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 
 .aboutContent{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: 20px;
     flex-direction: row-reverse;
-
+    flex-wrap: wrap;
 }
 .myPhoto{
     width: 300px;
@@ -274,16 +274,30 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 
 
 .emailField{
+    font-size: 18px;
     max-width: 200px;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bot: 15px;
 }
 
 .emailBody{
-    margin-top: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bot: 15px;
 }
 
 
 .sendMailBtn{
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bot: 15px;
     width: 100px;
+}
+
+.aboutText{
+    min-width: 310px;
+    max-width: 600px;
+}
+
+.emailInformation{
+    max-width: 310px;
 }
