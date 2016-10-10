@@ -15,7 +15,7 @@ html {
     overflow-x:hidden;
 }
 .navbar-brand{
-    font-size: 30;
+    font-size: 30px;
 }
 .glyphicon{
     font-size: 20px;
@@ -230,7 +230,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     z-index:3;
 }
 .background{
-    background-image: url('SC___FB.png');
+    background-image: url('SC___FB.jpg');
     margin: auto;
     background-size: cover;
     display: block;
