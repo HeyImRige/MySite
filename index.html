@@ -23,7 +23,7 @@
     <script src="MyAngularMain.js"></script>
 </head>
 
-<body ng-controller = "mainController">
+<body ng-controller="mainController">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -35,63 +35,62 @@
                 <a class="navbar-brand" href="MainPage.html">Robert Aron</a>
             </div>
             <div class="collapse navbar-collapse" ng-init="isCollapsed=true" uib-collapse="isCollapsed">
-                <ul class="nav navbar-nav navbar-right" >
+                <ul class="nav navbar-nav navbar-right">
                     <li class="navList"><a href="MainPage.html">Home</a></li>
                     <li class="navList"><a href="AboutPage.html">About</a></li>
                     <li class="navList"><a href="ContactMe.html"><span class="glyphicon glyphicon-envelope"></span>Contact Me</a></li>
                 </ul>
             </div>
-            </div>
-        </nav>
-        <div class="blackBackground">
-            <div class="background"></div>
-        </div>     
-        <div class="mainContent">
-            <header class="jumbotron myHeader">
-                <h1 class="mainTitle">
-                    <div class="titleItem" ng-show="animationBool&&software&&!audio" >
-                        Software
-                    </div>
-                    <div class="titleItem" ng-show="animationBool&&audio&&software" >
-                        Software<br>&<br>Audio
-                    </div>
-                    <div class="titleItem" ng-show="animationBool&&audio&&!software" >
-                        Audio
-                    </div>
-                </h1>
-            </header>
-            <div class="typeContainer">
-                <label id="software" class="typeButton" ng-click="myAnimationButton('software')">Software</label>
-                <label id="audio" class="typeButton" ng-click="myAnimationButton('audio')">Audio</label>
-                <label id="both" class="typeButton current" ng-click="myAnimationButton('both')">Both</label>
-            </div>
-                
+        </div>
+    </nav>
+    <div class="blackBackground">
+        <div class="background"></div>
+    </div>
+    <div class="mainContent">
+        <header class="jumbotron myHeader">
+            <h1 class="mainTitle">
+                <div class="titleItem" ng-show="animationBool&&software&&!audio">
+                    Software
+                </div>
+                <div class="titleItem" ng-show="animationBool&&audio&&software">
+                    Software<br>&<br>Audio
+                </div>
+                <div class="titleItem" ng-show="animationBool&&audio&&!software">
+                    Audio
+                </div>
+            </h1>
+        </header>
+        <div class="typeContainer">
+            <label id="software" class="typeButton" ng-click="myAnimationButton('software')">Software</label>
+            <label id="audio" class="typeButton" ng-click="myAnimationButton('audio')">Audio</label>
+            <label id="both" class="typeButton current" ng-click="myAnimationButton('both')">Both</label>
+        </div>
 
 
 
-            <!--articles-->
-            <div class="project-container" resize>
-                <article  ng-repeat="project in projects | filter:customFilter | orderBy:'-date'" class="project" ng-if="animationBool" ng-style="flexType()">
-                    <div ng-show="project.media.indexOf('youtube')==-1" ng-style="videostyle()" class="videoContainer">
-                        <img  ng-src="{{project.media}}" ng-style="videostyle()">
+        <!--articles-->
+        <div class="project-container" resize>
+            <article  ng-repeat="project in projects | filter:customFilter | orderBy:'-date'" class="project" ng-if="animationBool" ng-style="flexType()">
+                <div ng-show="project.media.indexOf('youtube')==-1" ng-style="videostyle()" class="videoContainer">
+                    <img  ng-src="{{project.media}}" ng-style="videostyle()">
+                </div>
+                <div ng-show="project.media.indexOf('youtube')!=-1" ng-style="videostyle()" class="videoContainer">
+                    <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
+                </div>
+                <div ng-style="style()" class="article-Content">
+                    <h2 class="project-Title">{{project.title}}</h2>
+                    <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
+                    <div class="project-content">
+                        {{windowWidth>900 || windowWidth<700 ? project.content: project.contentSmall}}
                     </div>
-                    <div ng-show="project.media.indexOf('youtube')!=-1" ng-style="videostyle()" class="videoContainer">
-                        <iframe ng-style="videostyle()" ng-src="{{to_trusted(project.media)}}" frameborder="0" allowfullscreen class="myVideo"></iframe>
-                    </div>
-                    <div ng-style="style()" class="article-Content">
-                        <h2 class="project-Title">{{project.title}}</h2>
-                        <h4 class="project-Date">{{project.date|date:'MM/dd/yyyy'}}</h4>
-                        <div class="project-content">
-                            {{windowWidth>900 || windowWidth<700 ? project.content: project.contentSmall}}
-                        </div>
-                        <a ng-class="project.additionalText === undefined  ? '' : 'aditionalLink btn btn-info'" href="{{project.additionalLink}}" role="button">
-                            {{project.additionalText}} 
-                            <span ng-class="project.additionalText === undefined  ? '' : 'glyphicon glyphicon-chevron-right'"></span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        <div>
+                    <a ng-class="project.additionalText === undefined  ? '' : 'aditionalLink btn btn-info'" href="{{project.additionalLink}}" role="button">
+                        {{project.additionalText}} 
+                        <span ng-class="project.additionalText === undefined  ? '' : 'glyphicon glyphicon-chevron-right'"></span>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
 </body>
 
 </html>

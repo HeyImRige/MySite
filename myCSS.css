@@ -24,11 +24,11 @@ html {
     text-align: right;
     text-transform: uppercase;
 }
-body header.myHeader{
+body div header.myHeader{
     border-radius: 4px;
     margin-bottom: 0px;
     padding: 0px;
-    height: 60%;
+    height: 55vh;
 }
 body div .aboutMe{
     border-radius: 4px;
@@ -142,7 +142,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 
 .project-container{
     width: 100%;
-    min-height: 92%;
+    min-height: 92vh;
     overflow-x: hidden;
 }
 .article-Content{
