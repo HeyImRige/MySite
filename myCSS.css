@@ -149,7 +149,8 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     display: flex;
     flex-direction: column;
     min-width: 340px;
-    padding: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 .project-content{
     clear:both;
@@ -259,6 +260,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     justify-content: flex-end;
     margin-top: auto;
     max-width: 250px;
+    padding: 4px;
 }
 
 .emailForm{
