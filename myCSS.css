@@ -90,8 +90,8 @@ article.project:nth-of-type(even) {
     border-radius: 6px;
     border-color: #031525;
     box-shadow: 0px 2px 2px #aaaaaa;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
     border:6px solid inherit;
 }
 /*enter - when a new item is added to the list or when an item is revealed after a filter
