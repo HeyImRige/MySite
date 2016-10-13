@@ -29,6 +29,7 @@ body div header.myHeader{
     margin-bottom: 0px;
     padding: 0px;
     height: 55vh;
+    min-height: 300px;
 }
 body div .aboutMe{
     border-radius: 4px;
@@ -279,19 +280,19 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     font-size: 18px;
     max-width: 200px;
     margin-top: 15px;
-    margin-bot: 15px;
+    margin-bottom: 15px;
 }
 
 .emailBody{
     font-size: 18px;
     margin-top: 15px;
-    margin-bot: 15px;
+    margin-bottom: 15px;
 }
 
 
 .sendMailBtn{
     margin-top: 15px;
-    margin-bot: 15px;
+    margin-bottom: 15px;
     width: 100px;
 }
 
