@@ -137,7 +137,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     margin: 0px;
     clear: both;
     float: left;
-    font-size:14pt;
+    font-size:12pt;
 }
 
 .project-container{
