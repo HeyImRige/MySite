@@ -236,6 +236,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     margin: auto;
     background-size: cover;
     display: block;
+    -ms-filter: blur(10px); 
     filter: blur(10px);
     -webkit-filter: blur(10px);
     width: 101%;
@@ -279,14 +280,14 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
 .emailField{
     font-size: 18px;
     max-width: 200px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .emailBody{
     font-size: 18px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
