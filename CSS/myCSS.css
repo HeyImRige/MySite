@@ -232,7 +232,7 @@ move - when an adjacent item is filtered out causing a reorder or when the item 
     z-index:3;
 }
 .background{
-    background-image: url('SC___FB.jpg');
+    background-image: url('../IMAGES/SC___FB.jpg');
     margin: auto;
     background-size: cover;
     display: block;
