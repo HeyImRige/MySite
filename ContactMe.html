@@ -58,6 +58,7 @@
                         <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required title="exampleEmail@test.com" ng-model="inputEmail" class="form-control emailField" name="_replyto" placeholder="Your email" />
                         <textarea rows="10" class="form-control emailBody" type="text" name="name" placeholder="email body"></textarea>
                         <!--hide this with css-->
+                        <input type="hidden" name="_next" value="#" />
                         <input type="text" name="_gotcha" style="display:none" />
                         <!--change this so it uses angular to say thankyou-->
                         <input type="submit" class="sendMailBtn" value="Send" ng-click="emailSent=!emailSent">
